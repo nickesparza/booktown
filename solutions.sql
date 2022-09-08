@@ -38,6 +38,10 @@ SELECT * FROM subjects WHERE location = 'Main St' ORDER BY subject ASC;
 -- ### Grouping and Counting
 
 -- 11. Get the COUNT of all books
+SELECT count(*) FROM books;
 -- 12. Get the COUNT of all Locations
+SELECT count(location) FROM subjects;
 -- 13. Get the COUNT of each unique location in the subjects table. Display the count and the location name. (hint: requires GROUP BY).
+SELECT DISTINCT count(location), location FROM subjects GROUP BY location;
 -- 14. List all books. Display the book_id, title, and a count of how many editions each book has. (hint: requires GROUP BY and JOIN)
+SELECT books.title, COUNT(editions.book_id) AS editions FROM books JOIN editions ON editions.book_id = books.id GROUP BY books.title;
