@@ -22,6 +22,9 @@ SELECT title FROM books JOIN subjects ON subjects.id = books.subject_id WHERE su
 -- 	* Author's first name
 -- 	* Author's last name
 -- 	* Book subject
+SELECT books.title, authors.first_name, authors.last_name, subjects.subject FROM books
+JOIN authors ON authors.id = books.author_id
+JOIN subjects ON books.subject_id = subjects.id;
 -- 8. Find all books that are listed in the stock table
 -- 	* Sort them by retail price (most expensive first)
 -- 	* Display ONLY: title and price
