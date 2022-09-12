@@ -16,6 +16,7 @@ SELECT * FROM subjects WHERE location = 'Main St' ORDER BY subject ASC;
 -- ### Joins
 
 -- 6. Find all books about Computers and list ONLY the book titles
+SELECT title FROM books JOIN subjects ON subjects.id = books.subject_id WHERE subject = 'Computers';
 -- 7. Find all books and display a result table with ONLY the following columns
 -- 	* Book title
 -- 	* Author's first name
