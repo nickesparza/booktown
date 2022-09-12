@@ -47,6 +47,11 @@ WHERE title = 'Dune';
 -- 	* Customer last name
 -- 	* ship date
 -- 	* book title
+SELECT customers.first_name AS customer_first, customers.last_name AS customer_last, books.title, shipments.ship_date FROM shipments
+JOIN customers ON shipments.customer_id = customers.id
+JOIN editions ON shipments.isbn = editions.isbn
+JOIN books ON editions.book_id = books.id
+ORDER BY ship_date DESC;
 
 -- ### Grouping and Counting
 
