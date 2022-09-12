@@ -33,6 +33,11 @@ JOIN subjects ON books.subject_id = subjects.id;
 -- 	* ISBN number
 -- 	* Publisher name
 -- 	* Retail price
+SELECT books.title, editions.isbn, publishers.name, stock.retail FROM books
+JOIN editions ON books.id = editions.book_id
+JOIN publishers ON editions.publisher_id = publishers.id
+JOIN stock ON editions.isbn = stock.isbn
+WHERE title = 'Dune';
 -- 10. Find all shipments sorted by ship date display a result table with ONLY the following columns:
 -- 	* Customer first name
 -- 	* Customer last name
